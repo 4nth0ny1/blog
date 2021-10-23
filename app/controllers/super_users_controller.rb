@@ -2,7 +2,7 @@ class SuperUsersController < ApplicationController
     before_action :set_super_user, only: %i[ show edit update destroy ]
 
     def index
-        @super_users = SuperUser.by_first_name
+        @super_users = SuperUser
     end 
 
     def new

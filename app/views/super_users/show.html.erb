@@ -1,0 +1,23 @@
+
+<p id="notice"><%= notice %></p>
+<div class="show-container">
+  <div class="home-container">
+    <h3>Employee Profile</h3>
+
+    <% if @super_user.profile_image %>
+     
+        <%= image_tag(@super_user.profile_image, width:"200") %>
+     
+    <% end %>
+
+    <p>
+      <%= @super_user.first_name %> <%= @super_user.last_name %>, <%= @super_user.bio %>
+    </p>
+
+    <p><%= @super_user.email %></p>
+    
+      <%= link_to 'Edit', edit_super_user_path(@super_user), class:"btn btn-warning" %> 
+      <%= link_to 'Destroy', super_user_path(@super_user), class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Back', super_users_path, class:"btn btn-info"  %>
+  </div>
+</div>

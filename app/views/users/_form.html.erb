@@ -1,0 +1,69 @@
+<div class="form-container">
+  <%= form_with(model: user) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    
+    
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :first_name %></label>
+        <div class="form-control"><%= form.text_field :first_name %></div>
+      </div>
+      
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :last_name %></label>
+        <div class="form-control"><%= form.text_field :last_name %></div>
+      </div>
+
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :user_name %></label>
+        <div class="form-control"><%= form.text_field :user_name %></div>
+      </div>
+
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :profile_image %></label>
+        <div class="form-control"><%= form.text_field :profile_image %></div>
+      </div>
+
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :email %></label>
+        <div class="form-control"><%= form.text_field :email %></div>
+      </div>
+
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :bio %></label>
+        <div class="form-control"><%= form.text_field :bio %></div>
+      </div>
+
+      <div class="field mb-3">
+        <label class="form-label"><%= form.label :mobile %></label>
+        <div class="form-control"><%= form.text_field :mobile %></div>
+      </div>
+
+      <div class="field  mb-3">
+        <label class="form-label"><%= form.label :password %></label>
+        <div class="form-control"><%= form.password_field :password %></div>
+      </div>
+
+      <div class="field">
+        <label class="form-label"><%= form.label :password_confirmation %></label>
+        <div class="form-control"><%= form.password_field :password_confirmation %></div>
+      </div><br>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+
+    <% end %>
+    
+</div>
