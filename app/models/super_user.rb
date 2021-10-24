@@ -1,4 +1,4 @@
-class Super_User < ApplicationRecord 
+class SuperUser < ApplicationRecord 
     has_secure_password
 
     validates :email, :user_name, presence: true, uniqueness: true

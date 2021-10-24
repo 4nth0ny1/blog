@@ -30,10 +30,8 @@ ActiveRecord::Schema.define(version: 2021_10_23_202852) do
     t.string "mobile"
     t.string "password_digest"
     t.string "profile_image"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_super_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,5 +47,4 @@ ActiveRecord::Schema.define(version: 2021_10_23_202852) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "super_users", "users"
 end

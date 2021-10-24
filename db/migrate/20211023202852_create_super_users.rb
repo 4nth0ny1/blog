@@ -9,7 +9,6 @@ class CreateSuperUsers < ActiveRecord::Migration[6.1]
       t.string :mobile
       t.string :password_digest
       t.string :profile_image
-      t.references :user,  null: false, foreign_key: true
 
       t.timestamps
     end
