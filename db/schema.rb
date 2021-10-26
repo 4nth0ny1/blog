@@ -10,28 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_202852) do
+ActiveRecord::Schema.define(version: 2021_10_23_195906) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
     t.string "image_link"
-    t.boolean "premium"
+    t.boolean "premium", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "super_users", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "user_name", null: false
-    t.string "bio"
-    t.string "email", null: false
-    t.string "mobile"
-    t.string "password_digest"
-    t.string "profile_image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_202852) do
     t.string "bio"
     t.string "email", null: false
     t.string "mobile"
+    t.boolean "admin", default: false
     t.string "password_digest"
     t.string "profile_image"
     t.datetime "created_at", precision: 6, null: false

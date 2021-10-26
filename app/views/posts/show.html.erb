@@ -7,12 +7,13 @@
     <% if @post.image_link %>
      <%= image_tag(@post.image_link, width:"200") %>
     <% end %>
-    
     <p><strong>Content: </strong><%= @post.content %></p>
 
+  <% if current_user.admin %>
     <p><strong>Premium: </strong><%= @post.premium %></p>
     <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-warning" %> 
     <%= link_to 'Destroy', @post, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
   </div>
 </div>

@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :bio
       t.string :email, null: false
       t.string :mobile
+      t.boolean :admin, default: false
       t.string :password_digest
       t.string :profile_image
 

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     before_action :set_post, only: %i[ show edit update destroy ]
+    before_action :redirect_unless_admin, only: %i[ new edit update destroy ]
   
       def index
           @posts = Post.all
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
       end
   
       def create
-            @post = Post.build(post_params)
+            @post = current_user.posts.build(post_params)
               if @post.save
                 redirect_to @post, notice: "Post was successfully created." 
               else

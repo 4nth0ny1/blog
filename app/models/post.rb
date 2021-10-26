@@ -1,6 +1,5 @@
 class Post < ApplicationRecord 
-
-    belongs_to :super_user
+    belongs_to :user
     
     validates :title, :content, presence: true
 
