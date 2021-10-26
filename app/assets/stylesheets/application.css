@@ -1,39 +1,52 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* this is for the posts index page  */
 
-
-
-.card-container, 
+.card-container,
 .head-container {
-    display: flex;
-    margin: 0 auto;
-    width: 980px;
-    flex-wrap: wrap;
+  display: flex;
+  margin: 0 auto;
+  width: 980px;
+  flex-wrap: wrap;
 }
 
 .head-container {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .card {
-    margin: 10px;
-    position: relative;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin: 10px;
+  position: relative;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .card-button {
-    text-align: center;
+  text-align: center;
 }
+
+/* When the browser is at most 600px and above */
+@media screen and (max-width: 600px) {
+  .card-container,
+  .head-container {
+    width: 300px;
+  }
+}
+
+/* this is the end of the posts index page  */
+
+/* this is the beginning of the post show page */
+
+.show-container {
+  margin: 0 auto;
+  width: 980px;
+}
+
+.show-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-right {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* this is the end of the post show page  */
