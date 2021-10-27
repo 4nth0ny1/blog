@@ -11,34 +11,35 @@
             </ul>
           </div>
         <% end %>
+      <div class="form-container">
+        <div class="form-title-container">
+          <div class="field mb-3">
+              <%= form.text_field :title, placeholder:"title goes here...", class:"form-control form-title" %>
+          </div>
 
-   
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :title %></label>
-            <div class="form-control"><%= form.text_field :title %></div>
+          <div class="field mb-3">
+              <label class="form-label"><%= form.label :premium %></label>
+              <%= form.select :premium, :premium ? "true" : "false", class:"form-control" %>
+          </div>
+
+          <div class="actions">
+              <%= form.submit %>
+          </div>
+
         </div>
 
         <div class="field mb-3">
-            <label class="form-label"><%= form.label :content %></label>
-            <textarea class="form-control" rows="5"><%= form.text_field :content %></textarea>
+            <%= form.text_field :image_link, placeholder:"image link", class:"form-control" %>
         </div>
 
         <div class="field mb-3">
-            <label class="form-label"><%= form.label :premium %></label>
-            <div class="form-control"><%= form.text_field :premium %></div>
+            <%= form.text_area :content, placeholder:"content", class:"form-control" %>
         </div>
 
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :image_link %></label>
-            <div class="form-control"><%= form.text_field :image_link %></div>
-        </div>
-
-
-        <div class="actions">
-            <%= form.submit %>
-        </div>
-
-        <% end %>
  
 
+      
+
+        <% end %>
+      </div>
 </div>

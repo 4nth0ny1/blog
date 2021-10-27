@@ -16,5 +16,10 @@
   <% if @post.image_link %>
     <%= image_tag(@post.image_link, width:"980") %>
   <% end %>
-  <p><strong>Content: </strong><%= @post.content %></p>
+
+  <% if current_user.admin %>
+    <p contenteditable="true"><strong>Content: </strong><%= @post.content %></p>
+  <% else %>
+      <p><strong>Content: </strong><%= @post.content %></p>
+  <% end %>
 </div>
