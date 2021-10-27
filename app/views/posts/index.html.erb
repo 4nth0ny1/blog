@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
   <div class="head-container">
     <h1>Posts</h1>
-    <%= link_to 'Create Post', new_post_path, class:"btn btn-primary" %>
+
+    <% if current_user&.admin %> 
+      <%= link_to 'Create Post', new_post_path, class:"btn btn-primary" %>
+    <% end %>
+
   </div>
 
   <div class="card-container">
