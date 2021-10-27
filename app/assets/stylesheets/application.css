@@ -61,3 +61,37 @@
 .form-title {
   width: 600px;
 }
+
+.nav-item {
+  display: flex;
+}
+
+/* FORM RADIO SECTION BEGIN */
+/* FORM RADIO SECTION BEGIN */
+/* FORM RADIO SECTION BEGIN */
+
+
+.premium-radio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.premium-form-label {
+  display: flex;
+}
+
+.radio {
+  display: flex;
+  padding: 10px;
+}
+
+.radio-label {
+  padding: 10px;
+}
+
+/* FORM RADIO SECTION END */
+/* FORM RADIO SECTION END */
+/* FORM RADIO SECTION END */

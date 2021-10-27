@@ -17,13 +17,19 @@
               <%= form.text_field :title, placeholder:"title goes here...", class:"form-control form-title" %>
           </div>
 
-          <div class="field mb-3">
-              <label class="form-label"><%= form.label :premium %></label>
-              <%= form.select :premium, :premium ? "true" : "false", class:"form-control" %>
+          <div class="field mb-3 premium-radio-container">
+              <label class="form-label premium-form-label"><%= form.label :premium %></label>
+              <div class="radio">
+                <%= radio_button_tag(:premium, true) %>
+                  <%= label_tag(:premium, "yes") %>
+                <%= radio_button_tag(:premium, false) %>
+                  <%= label_tag(:premium, "no") %>
+              </div>
           </div>
 
           <div class="actions">
-              <%= form.submit %>
+              <%= form.button %>
+              <button><%= link_to 'cancel', posts_path %></button>
           </div>
 
         </div>
